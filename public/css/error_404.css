@@ -1,0 +1,129 @@
+/*Full-screen version*/
+
+.content {
+	overflow: hidden;
+	position: relative;
+}
+
+#sign>p.er404 {
+	text-align: center;
+	position: relative;
+	top:11%;
+	font-weight: bold;
+	font-size: 5.7em;
+	line-height: 1;
+}
+
+#sign>p.wrongWay {
+	text-align: center;
+	position: relative;
+	top:11%;
+	font-weight: bold;
+	font-size: 2em;
+	line-height: 1.4;
+}
+
+#headerSky {
+	background: url('../images/hills.png') repeat-x;
+    height: 277px;
+	position: relative;
+}
+
+#road {
+	background: url('../images/road.jpg') repeat-x;
+    height: 340px;
+	position: relative;
+}
+
+#ground {
+	background: url('../images/ground.jpg') repeat;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+#ground2 {
+	background: url('../images/ground.jpg') repeat;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}
+
+#cactus {
+	background: url('../images/cactus.png') repeat;
+    height: 100%;
+    width: 100%;
+}
+
+#sign {
+	position: absolute;
+	z-index: 1;
+	background: url('../images/sign.png') no-repeat;
+	width: 230px;
+	height: 597px;
+	right: 170px;
+	top: -220px;
+}
+
+#sun, #moon, #cloud1, #cloud2, #car1, #car2, #car1wheel1, #car1wheel2, #car2wheel1, #car2wheel2 {
+	position: absolute;
+}
+
+#msg_IE {
+	width: 400px;
+	margin: 3% auto 0;
+	background-color: #ffffff;
+	border: 1px solid black;
+	text-align: center;
+	border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 1px 3px #686868;
+    position: relative;
+    padding:  50px 10px;
+}
+
+#msg_text1, .msg_text1 {
+	color: #333333;
+	font-size: 4em;
+	margin: 0 auto;
+}
+
+#msg_text2, .msg_text2 {
+	color: #333333;
+	font-size: 1.5em;
+	margin: 0 auto;
+}
+
+.sign_container {
+	display: none;
+}
+
+/*End of full-screen version*/
+
+/*Mobile version*/
+
+@media only screen and (max-width: 960px){
+
+body {
+	background-color: #dbe3e4 !important;
+}
+
+#sun, #moon, #headerSky, #road, #ground, #ground2 {
+	display: none;
+}
+
+.sign_container {
+    width: 400px;
+	margin: 3% auto 0;
+	background-color: #ffffff;
+	border: 1px solid black;
+	text-align: center;
+	border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 1px 3px #686868;
+    position: relative;
+    padding:  50px 10px;
+    display: block;
+}
+
+/*End of mobile version*/
+
+
