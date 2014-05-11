@@ -2,16 +2,16 @@ window.onload=function(){
 	init();
 }
 window.onresize=function(){
-	showSlider();
-	move();
+	//showSlider();
+	//move();
 }	
 	
 	function init(){
 		check_javascript();
 		changeActive();
 		setStyle();
-		showSlider();
-		move();
+		//showSlider();
+		//move();
 		row_editor();
 		checkFormAdm();
 		validation();

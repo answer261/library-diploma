@@ -153,29 +153,7 @@ Route::set('logout', 'logout')
 		'action'	 => 'logout',
 	));
 
-/**
- * [Admin] Clients Manager Controller Routers
- */
-Route::set('clientsman', 'admin/clients(/<action>(/<id>))', array('action' => 'index|add|edit|register|update'))
-	->defaults(array(
-		'directory'  => 'admin',
-		'controller' => 'clientsman',
-	));
-/**
- * [Admin] Clients Manager Controller Routers
- */
 
-/**
- * [Admin] Brands Manager Controller Routers
- */
-Route::set('brandsman', 'admin/brands(/<action>(/<id>))', array('action' => 'index|add|edit|register|update|tuhes'))
-	->defaults(array(
-		'directory'  => 'admin',
-		'controller' => 'brandsman',
-	));
-/**
- * [Admin] Brands Manager Controller Routers
- */	
 Route::set('booksman', 'admin/books(/<action>(/<id>))', array('action' => 'index|add|edit|register|update|tuhes'))
 	->defaults(array(
 		'directory'  => 'admin',
@@ -187,9 +165,8 @@ Route::set('acounts', 'admin/acounts(/<action>(/<id>))', array('action' => 'inde
 		'directory'  => 'admin',
 		'controller' => 'acounts',
 	));
-/**
- * [Admin] Fueltypes Manager Controller Routers
- */
+
+
 Route::set('invnumbers', 'admin/invnumbers(/<action>(/<id>))', array('action' => 'index|add|edit|register|update'))
 	->defaults(array(
 		'directory'  => 'admin',
@@ -209,123 +186,26 @@ Route::set('users', 'admin/users(/<action>(/<id>))', array('action' => 'index|ad
 		'controller' => 'users',
 	));
 
-Route::set('fueltypesman', 'admin/fueltypes(/<action>(/<id>))', array('action' => 'index|add|edit|register|update'))
+Route::set('publishers', 'admin/publishers(/<action>(/<id>))', array('action' => 'index|add|edit|register|update'))
 	->defaults(array(
 		'directory'  => 'admin',
-		'controller' => 'fueltypesman',
+		'controller' => 'publishers',
 	));
-/**
- * [Admin] Fueltypes Manager Controller Routers
- */	
 
-/**
- * [Admin] Carcasstypes Manager Controller Routers
- */
-Route::set('carcasstypesman', 'admin/carcasstypes(/<action>(/<id>))', array('action' => 'index|add|edit|register|update'))
-	->defaults(array(
-		'directory'  => 'admin',
-		'controller' => 'carcasstypesman',
-	));
-/**
- * [Admin] Carcasstypes Manager Controller Routers
- */	
 
-/**
- * [Admin] Models Manager Controller Routers
- */
-Route::set('modelsman', 'admin/models(/<action>(/<id>))', array('action' => 'index|add|register|update'))
-	->defaults(array(
-		'directory'  => 'admin',
-		'controller' => 'modelsman',
-	));
-	
-Route::set('editmodel', 'admin/models(/<action>(/<id>)(/<brand_id>))', array('action' => 'edit'))
-	->defaults(array(
-		'directory'  => 'admin',
-		'controller' => 'modelsman',
-	));
-/**
- * [Admin] Models Manager Controller Routers
- */	
-
-/**
- * [Admin] Cars Manager Controller Routers
- */
-Route::set('carsman', 'admin/cars(/<action>(/<id>))', array('action' => 'index|add|edit|register|update'))
-	->defaults(array(
-		'directory'  => 'admin',
-		'controller' => 'carsman',
-	));
-/**
- * [Admin] Cars Manager Controller Routers
- */	
-
-/**
- * [Admin] Options Groups Manager Controller Routers
- */
-Route::set('optgsman', 'admin/optg(/<action>(/<id>))', array('action' => 'index|add|edit|register|update'))
-	->defaults(array(
-		'directory'  => 'admin',
-		'controller' => 'optionsgroupsman',
-	));
-/**
- * [Admin] Options Groups Manager Controller Routers
- */	
-
-/**
- * [Admin] Orders Manager Controller Routers
- */
 Route::set('ordersman', 'admin/orders(/<action>(/<id>))', array('action' => 'index|add|edit|register|update'))
 	->defaults(array(
 		'directory'  => 'admin',
 		'controller' => 'ordersman',
 	));
-/**
- * [Admin] Options Groups Manager Controller Routers
- */	
 
-/**
- * [Admin] Options Manager Controller Routers
- */
-Route::set('optionsman', 'admin/options(/<action>(/<id>))', array('action' => 'index|add|register|update'))
-	->defaults(array(
-		'directory'  => 'admin',
-		'controller' => 'optionsman',
-	));
-	
-Route::set('editoption', 'admin/options(/<action>(/<id>)(/<optg_id>))', array('action' => 'edit'))
-	->defaults(array(
-		'directory'  => 'admin',
-		'controller' => 'optionsman',
-	));
-/**
- * [Admin] Options Manager Controller Routers
- */	
-
-/**
- * [Admin] Base Equipment Manager Controller Routers
- */
-Route::set('baseequsman', 'admin/baseequs(/<action>(/<id>))', array('action' => 'index|add|register|update'))
-	->defaults(array(
-		'directory'  => 'admin',
-		'controller' => 'baseequsman',
-	));
-	
-Route::set('editbaseequ', 'admin/baseequs(/<action>(/<id>)(/<car_id>))', array('action' => 'edit'))
-	->defaults(array(
-		'directory'  => 'admin',
-		'controller' => 'baseequsman',
-	));
-/**
- * [Admin] Base Equipment Manager Controller Routers
- */	
 
 Route::set('page', '<action>', array('action' => 'about|projects|info|contact'))
 	->defaults(array(
 		'controller' => 'page',
 	));
 
-Route::set('clientorders', 'user/orders(/<action>(/<id>))', array('action' => 'new|registerered'))
+Route::set('clientorders', 'user/orders(/<action>(/<id>))', array('action' => 'new|registered|register'))
 	->defaults(array(
 		'directory'  => 'user',
 		'controller' => 'orders',

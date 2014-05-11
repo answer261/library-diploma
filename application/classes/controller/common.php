@@ -8,7 +8,7 @@ abstract class Controller_Common extends Controller_Template {
 		
 	public function before() {
 		parent::before();
-		View::set_global('title', 'Auto Saloon');
+		View::set_global('title', 'Електронна бібліотека');
 		View::set_global('description', 'Kohana 3.2 framework based site');
 		$this->template->content = "";
 		$this->template->styles = array('framework', 'main');

@@ -12,24 +12,23 @@
 <div class="table" id="table_id">
 	<div class="table-row caption">
 		<div class="table-cell width-10 text-center">ID</div>
-		<div class="table-cell">Дата</div>
-		<div class="table-cell">Клієнт</div>
-		<div class="table-cell">Автомобіль</div>
-		<div class="table-cell">Комплектація</div>
-		<div class="table-cell">Ціна</div>
+		<div class="table-cell">Читач</div>
+		<div class="table-cell">Інвентарний номер книги</div>
+		<div class="table-cell">Початок</div>
+		<div class="table-cell">Кінець</div>
 	</div>
 <?php 
 foreach ($data as $order) {
 	echo "<div class=\"table-row\">\n";
 	echo "<div class=\"table-cell text-center\">{$order->order_id}</div>\n";
-	echo "<div class=\"table-cell\">{$order->order_date}</div>\n";
-	echo "<div class=\"table-cell\">{$order->client_name}</div>\n";
-	echo "<div class=\"table-cell\">{$order->car_name}</div>\n";
-	echo "<div class=\"table-cell\">{$order->baseequ_name}</div>\n";
-	echo "<div class=\"table-cell\">{$order->baseequ_price}</div>\n";
+	echo "<div class=\"table-cell\">{$order->user_id}</div>\n";
+	echo "<div class=\"table-cell\">{$order->binv_number}</div>\n";
+	echo "<div class=\"table-cell\">{$order->start_date}</div>\n";
+	echo "<div class=\"table-cell\">{$order->end_date}</div>\n";
 	echo "</div>\n";
 }
 ?>
+
 
 </div>
 <div id="pagilinks"><?php echo "{$page_links}\n" ?></div>

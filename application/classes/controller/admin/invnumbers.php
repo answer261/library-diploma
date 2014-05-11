@@ -12,6 +12,7 @@ class Controller_Admin_Invnumbers extends Controller_Admin_Commonentity {
 	protected $redirectURL = "admin/invnumbers";
 	protected function prepareMainData() {
 		
+		$this->data[] = intval($this->request->post('binv_number'));
 		$this->data[] = intval($this->request->post('book_id'));
 
 	}
@@ -21,7 +22,6 @@ class Controller_Admin_Invnumbers extends Controller_Admin_Commonentity {
 			$this->request->redirect("admin/login");
 		}
 		else {
-			$this->data[] = intval($this->request->post('binv_number'));
 			$this->prepareMainData();
 			$model = Model::factory($this->modelName)->updateRecord($this->data);
 			if ($model) $this->request->redirect($this->redirectURL);
@@ -33,4 +33,29 @@ class Controller_Admin_Invnumbers extends Controller_Admin_Commonentity {
 		exit(1);
 	}
 
-} // Brands Manager Controller
+
+
+	public function addEditHandler($pathToViewFile, $record_id = null) {
+		$model = Model::factory($this->modelName)->getRecordUpdt($record_id);
+		$content = View::factory($pathToViewFile);
+		$content->data = $model;
+		
+		$model_books = Model::factory('Books')->getRecords();
+		$content->books = $model_books;
+
+		$this->template->content = $content;
+	}
+
+	public function action_register() {
+		
+
+	
+			// get variables from Request object
+		
+			$this->prepareMainData();
+			$model = Model::factory($this->modelName)->registerRecord($this->data);
+			if ($model) $this->request->redirect($this->redirectURL);
+		
+	}
+
+}

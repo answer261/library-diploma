@@ -11,7 +11,7 @@ foreach ($data as $category) {
 <script src="<?php echo URL::base();?>public/js/forms.js"></script>
 <span class="tab_title">Редагування категорії<hr></span>
 <div id="addform">
-	<form onsubmit="return checkForm(this)" action="<?php echo URL::base();?>admin/categories/update/<?php echo $category_id;?>" method="POST" name="editform" id="editform">
+	<form action="<?php echo URL::base();?>admin/categories/update/<?php echo $category_id;?>" method="POST" name="editform" id="editform">
 		<input type="hidden" name="category_id" id="category_id" value="<?php echo $category_id?>">
 		<input type="hidden" name="category_name" id="category_name" value="<?php echo $category_name?>">
 

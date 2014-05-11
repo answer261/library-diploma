@@ -5,7 +5,7 @@ function initPage(){
 	setStyle();
 	odd_pair();
 	row_editor();
-	changeActive();
+	//changeActive();
 	checkFormAdm();
 	eventsToA();
 	eventsToAll();

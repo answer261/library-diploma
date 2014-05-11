@@ -16,6 +16,34 @@
 		<script type="text/javascript" src="<?php echo URL::base();?>public/js/ajax.js"></script>
 		
 		<script type="text/javascript" src="<?php echo URL::base();?>public/js/history.js"></script>
+
+		<script type="text/javascript">
+		$(document).ready(function () {
+			if( $("form") ) {
+				$("form").on("submit", function (e) {
+		
+					var valid = true;
+					$("form").find("input").each(function (index, element) {
+						if($(element).val() == ""){
+							$(element).css({"border": "1px solid red"})
+							valid = false;
+							
+						}
+					});
+					$("form").find("select").each(function (index, element) {
+						if($(element).val() == 0){
+							$(element).css({"border": "1px solid red"})
+							valid = false;
+							
+						}
+					});
+
+					return valid;
+				});
+			}
+		})
+			
+		</script>
 		<!--[if lte IE 7]>
 			<script>var ieCapt = true;</script>
 		<![endif]-->
@@ -35,11 +63,12 @@
 						<div class='contacts'>
 							<div class="phonenumber">
 								<span class='code'>(066)</span>
-								<span class='number'>666-66-66</span>
+								<span class='number'>577-21-25</span>
 							</div>
 							<div class='contact'>
 								<span >Зв'яжіться з нами</span>
 							</div>
+							<div>Ви увійшли як <span class="bold"><?php echo "{$user_first}"; ?> <?php echo "{$user_last}"; ?></span></div>
 						</div>
 					</div>
 				</div>
@@ -48,11 +77,14 @@
 				<div class='wrapp-menu  no-fall'>
 					<div class="row row-grad">                     
 							<ul class="nav">
-								<li><a href="admin/books" target="_self"><i class="icon_brands"></i>Книжки</a></li>
-								<li><a href="admin/acounts" target="_self"><i class="icon_user"></i>Записи</a></li>
-								<li><a href="admin/invnumbers" target="_self"><i class="icon_fuel"></i>Інвентарні номери</a></li>
-								<li><a href="admin/categories" target="_self"><i class="icon_fuel"></i>Категорії</a></li>
-								<li><a href="admin/users" target="_self"><i class="icon_fuel"></i>Користувачі</a></li>
+								<li><a href='<?php echo URL::site('admin/books')?>' target="_self">Книжки</a></li>
+								<li><a href='<?php echo URL::site('admin/acounts')?>' target="_self">Записи</a></li>
+								<li><a href='<?php echo URL::site('admin/invnumbers')?>' target="_self">Інвентарні номери</a></li>
+								<li><a href='<?php echo URL::site('admin/categories')?>' target="_self">Категорії</a></li>
+								<li><a href='<?php echo URL::site('admin/users')?>' target="_self">Користувачі</a></li>
+								<li><a href='<?php echo URL::site('admin/publishers')?>'target="_self">Видавництва</a></li>
+								<li><a href='<?php echo URL::site('admin/orders')?>'target="_self">Замовлення</a></li>
+
 
 							</ul>
 							<ul class='add-menu'>
@@ -78,7 +110,7 @@
 		    <!-- Footer -->
 		    <div class='footer'>
 		        <div class='footer-text row-grad'>
-		            <span>2013. Developed by Web UI team.</span>
+		            <span>2014 Yurii Lytvynenko</span>
 		        </div>
 		    </div>
 		    <!-- Footer -->

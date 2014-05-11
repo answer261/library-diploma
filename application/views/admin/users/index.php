@@ -15,6 +15,8 @@
 	<div class="table-row caption">
 		<div class="table-cell width-10 text-center">ID користувача</div>
 		<div class="table-cell width-50">Логін користувача</div>
+		<div class="table-cell width-50">Ім’я</div>
+		<div class="table-cell width-50">Прізвище</div>
 		<div class="table-cell width-10">Емейл</div>
 		<div class="table-cell width-10">Управління</div>
 	</div>
@@ -24,6 +26,8 @@ foreach ($data as $users) {
 	echo "<div class=\"table-row\">\n";
 	echo "<div class=\"table-cell\">{$users->id}</div>\n";
 	echo "<div class=\"table-cell\">{$users->username}</div>\n";
+	echo "<div class=\"table-cell\">{$users->firstname}</div>\n";
+	echo "<div class=\"table-cell\">{$users->lastname}</div>\n";
 	echo "<div class=\"table-cell\">{$users->email}</div>\n";
 	echo "<div class=\"table-cell text-center width-10\"><div class=\"table_icons\"><a class=\"icon_pencil\" href=\"{$edit_link}\"></a></div></div>\n";
 	echo "</div>\n";

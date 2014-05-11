@@ -5,7 +5,7 @@
 class Controller_User_Main extends Controller_User_Common {
 
 	public function action_index() {
-		if (!Auth::instance()->logged_in("login")) {
+		if (!Auth::instance()->logged_in()) {
 			$this->request->redirect("login");
 		}
 		else {

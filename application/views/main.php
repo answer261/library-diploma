@@ -6,6 +6,8 @@
     	<title><?php echo "{$title}"; ?></title>
     	<link rel="shortcut icon" href="<?php echo URL::base();?>../../public/images/favicon.ico">
     	<link rel="stylesheet" type="text/css" href="../../public/css/preload.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
         <script src='<?php echo URL::base();?>../public/js/script.js'type="text/javascript"></script>
         <script src='<?php echo URL::base();?>../public/js/slider.js'type="text/javascript"></script>
         <script type="text/javascript" src="<?php echo URL::base();?>../../public/js/row_editor.js"></script>
@@ -42,7 +44,7 @@
                 <div class='contacts width-50'>
                     <div class="phonenumber">
                         <span class='code'>(066)</span>
-                        <span class='number'>666-66-66</span>
+                        <span class='number'>471-45-17</span>
                     </div>
                     <div class='contact'>
                         <span >Зв'яжіться з нами</span>
@@ -58,7 +60,7 @@
                         <li><a target="_self"><i class="icon_home"></i>Головна</a></li>
                         <li id="info"><a target="_self"><i class="icon_info"></i>Інформація</a></li>
                         <li id="contact"><a target="_self"><i class="icon_contacts"></i>Контакти</a></li>
-                        <li id="orders/new"><a target="_self"><i class="icon_basket"></i>Замовлення</a></li>
+                        <li><a href="user/orders/new"><i class="icon_basket"></i>Замовити книжку</a></li>
                     </ul>
                     <ul class='add-menu'>
     			<li><a href='<?php echo URL::site('admin')?>' target="_self" title="Admin section"><i class="icon_signin"></i></a></li>
@@ -82,7 +84,7 @@
         <!-- Footer -->
         <div class='footer'>
             <div class='footer-text row-grad'>
-                <span>2013. Developed by Web UI team.</span>
+                <span>2014. Yurii Lytvynenko</span>
             </div>
         </div> 
         <!-- /Footer -->

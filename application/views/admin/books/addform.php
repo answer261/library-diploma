@@ -1,10 +1,10 @@
 <!-- Brand add form -->
 <script src="<?php echo URL::base();?>public/js/forms.js"></script>
 <div class="title-wr text-center">
-	<span class="tab_title">Реєстрація інформації про нового виробника <hr></span>
+	<span class="tab_title">Реєстрація інформації про нову книжку <hr></span>
 </div>
 <div id="addform">
-	<form onsubmit="return checkForm(this)" action="register" method="POST" name="addform" id="addform">
+	<form action="register" method="POST" name="addform" id="addform">
 		<div class="table">
 				<div class="table-row">
 					<div class="table-cell no-border label"><label for="brand_name">Категорія</label></div>
@@ -37,7 +37,16 @@
 				</div>
 				<div class="table-row">
 					<div class="table-cell no-border label"><label for="brand_name">Видавник</label></div>
-					<div class='table-cell no-border input'><input type='text' name='publisher_id' id='publisher_id'/></div>
+					<div class='table-cell no-border input'>
+						<select name="publisher_id" id="publisher_id">
+							<option value="0">Виберіть видавника</option>
+							<?php
+							foreach ($publishers as $publisher) {
+								echo "<option value=\"{$publisher->publisher_id}\">{$publisher->publisher_name}</option>";
+							}
+							?>
+						</select>
+					</div>
 				</div>
 				<div class="table-row">
 					<div class="table-cell no-border label"><label for="brand_name">Дата</label></div>

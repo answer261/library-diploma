@@ -6,6 +6,9 @@
 		<title><?php echo "{$title}"; ?></title>
 		<link rel="stylesheet" type="text/css" href="<?php echo URL::base();?>public/css/framework.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo URL::base();?>public/css/main.css">
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 		<link rel="shortcut icon" href="<?php echo URL::base();?>public/images/favicon.ico">
 		<script type="text/javascript" src="<?php echo URL::base();?>public/js/main_adm.js"></script>
 		<script type="text/javascript" src="<?php echo URL::base();?>public/js/classEditor.js"></script>
@@ -45,7 +48,7 @@
 				<div class='wrapp-menu  no-fall'>
 					<div class="row row-grad">                     
 							<ul class="nav">
-								<li><a href="users/books" target="_self"><i class="icon_brands"></i>Замовити книжку</a></li>
+								<li><a href='<?php echo URL::site('user/orders/new')?>' target="_self"><i class="icon_brands"></i>Замовити книжку</a></li>
 
 							</ul>
 							<ul class='add-menu'>

@@ -54,6 +54,9 @@ class Controller_Admin_Booksman extends Controller_Admin_Commonentity {
 		
 			$model_categories = Model::factory('Categories')->getRecords();
 			$content->categories = $model_categories;
+
+			$model_publishers = Model::factory('Publishers')->getRecords();
+			$content->publishers = $model_publishers;
 		
 			$this->template->content = $content;		
 	}

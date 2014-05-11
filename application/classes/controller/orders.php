@@ -11,7 +11,11 @@ class Controller_Orders extends Controller_Common {
 	public function action_index() {}
 
 	public function action_new() {
-		$model_baseequs = Model::factory('Baseequs')->getRecords();
+		$user_id = Auth::instance()->get_user()->id;
+		$firstname = Auth::instance()->get_user()->firstname;
+		$lastname = Auth::instance()->get_user()->lastname;
+
+		
 		$content = View::factory("orders/addform");
 		$content->data = $model_baseequs;
 		$this->template->content = $content;

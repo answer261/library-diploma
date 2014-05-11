@@ -1,6 +1,6 @@
 <!-- Baseequ add form -->
 <script src="<?php echo URL::base();?>public/js/forms.js"></script>
-<span class="tab_title">Реєстрація нової категорії<hr></span>
+<span class="tab_title">Реєстрація нового користувача<hr></span>
 <div id="addform">
 	<form action="register" method="POST" name="addform" id="addform">
 
@@ -26,10 +26,26 @@
 			</div>
 			<div class="table-row">
 				<div class="table-cell no-border label">
+					<label for="baseequ_name">Ім’я</label>
+				</div>
+				<div class="table-cell no-border input">
+					<input type="text" name="firstname" id="firstname">
+				</div>
+			</div>
+			<div class="table-row">
+				<div class="table-cell no-border label">
+					<label for="baseequ_name">Прізвище</label>
+				</div>
+				<div class="table-cell no-border input">
+					<input type="text" name="lastname" id="lastname">
+				</div>
+			</div>
+			<div class="table-row">
+				<div class="table-cell no-border label">
 					<label for="baseequ_name">Емейл</label>
 				</div>
 				<div class="table-cell no-border input">
-					<input type="text" name="email" id="email">
+					<input type="password" name="email" id="email">
 				</div>
 			</div>
 			<div class="table-row">
@@ -37,7 +53,7 @@
 					<label for="baseequ_name">Пароль</label>
 				</div>
 				<div class="table-cell no-border input">
-					<input type="text" name="password" id="password">
+					<input type="password" name="password" id="password">
 				</div>
 			</div>
 			<div class="table-row">

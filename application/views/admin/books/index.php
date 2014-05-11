@@ -15,7 +15,6 @@
 <div class="table" id="table_id">
 	<div class="table-row caption">
 		<div class="table-cell text-center">ID Книги</div>
-		<div class="table-cell">Категорія</div>
 		<div class="table-cell">Назва</div>
 		<div class="table-cell">Автор</div>
 		<div class="table-cell">ISBN</div>
@@ -34,7 +33,6 @@
 		$brand_models = URL::site("admin/models/index")."/".$book->book_id;
 		echo "<div class=\"table-row\">\n";
 		echo "<div class=\"table-cell\">{$book->book_id}</div>";
-		echo "<div class=\"table-cell\">{$book->category_id}</div>";
 		echo "<div class=\"table-cell\">{$book->book_title}</div>";
 		echo "<div class=\"table-cell\">{$book->authors}</div>";
 		echo "<div class=\"table-cell\">{$book->isbn_code}</div>";
@@ -52,6 +50,6 @@
 
 </div>
 <div id="pagilinks"><?php echo "{$page_links}\n" ?></div>
-<div class="addhref"><a class="add_button">Додати нового виробника</a></div>
+<div class="addhref"><a class="add_button">Додати нову книжку</a></div>
 
 <!-- /Clients index -->

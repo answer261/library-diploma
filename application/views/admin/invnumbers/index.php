@@ -32,6 +32,6 @@
 
 </div>
 <div id="pagilinks"><?php echo "{$page_links}\n" ?></div>
-<div class="addhref"><a class="add_button">Додати нового виробника</a></div>
+<div class="addhref"><a class="add_button">Додати новий інвентарний номер</a></div>
 
 <!-- /Clients index -->

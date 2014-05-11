@@ -13,7 +13,7 @@
 
 <div class="table" id="table_id">
 	<div class="table-row caption">
-		<div class="table-cell width-10 text-center">ID</div>
+		<div class="table-cell width-10 text-center">ID користувача</div>
 		<div class="table-cell width-50">Інвентарний номер</div>
 		<div class="table-cell width-30">Початок</div>
 		<div class="table-cell width-30">Кінець</div>

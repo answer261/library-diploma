@@ -1,67 +1,90 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-// Orders Controller
-/**
- * @author Mykola Gulvanyuk
- *
- */
+// Options Groups Manager Controller
 
-class Controller_User_Orders extends Controller_User_Common {
+class Controller_User_Orders extends Controller_User_Commonentity {
+	
+	protected $modelName = "Orders";
+	protected $indexViewFile = "user/orders/new";
+	protected $data = array();
+	protected $redirectURL = "user/orders/registered";
 
-	public function action_index() {}
+		public function before() {
+		parent::before();
+
+	}
+		
+	protected function prepareMainData() {
+		$user = ORM::factory('invnumbers');
+
+		$book_id = intval($this->request->post('book_id'));
+		$model = Model::factory("Invnumbers");
+
+		$inv_numbers = $model->getRecord($book_id);
+		//$inv_number = $inv_number_row->binv_number;
+		$binv_number = 0;
+
+		foreach ($inv_numbers as $inv_number) {
+			$binv_number = $inv_number->binv_number;
+			$book_id = $inv_number->book_id;
+
+		}
+
+		$this->data[] = intval($this->request->post('user_id'));
+		$this->data[] = $binv_number;
+		$this->data[] = trim(strval($this->request->post('start_date')));
+		$this->data[] = trim(strval($this->request->post('end_date')));
+	}
 
 	public function action_new() {
 
-		if (!Auth::instance()->logged_in("login")) {
+		if (!Auth::instance()->logged_in()) {
 			$this->request->redirect("login");
-
-		$model_baseequs = Model::factory('Baseequs')->getRecords();
-		$content = View::factory("orders/addform");
-		$content->data = $model_baseequs;
-		$this->template->content = $content;
 		}
+
+		$user_id = Auth::instance()->get_user()->id;
+		$firstname = Auth::instance()->get_user()->firstname;
+		$lastname = Auth::instance()->get_user()->lastname;
+		$email = Auth::instance()->get_user()->email;
+		$model_books = Model::factory('books')->getRecords();
+
+		$content = View::factory("user/orders/addform");
+
+		$content->user_id = $user_id;
+		$content->firstname = $firstname;
+		$content->lastname = $lastname;
+		$content->email = $email;
+		$content->data = $model_books;
+		$this->template->content = $content;
+		
+		
 	}
 
-	public function action_register() {
-		$data = array();
-		// check client info by email
-		// if client present we need to know client_id
-		$client_email = $this->request->post("client_email");
-		$client_id = Model::factory('Clients')->getClientByEmail($client_email);
-		if ($client_id == -1) {
-			// check client fields
-			$data[] = 0;
-			$data[] = trim(strval($this->request->post('client_surname')));
-			$data[] = trim(strval($this->request->post('client_name')));
-			$data[] = trim(strval($this->request->post('client_fname')));
-			$data[] = trim(strval($this->request->post('client_address')));
-			$data[] = trim(strval($this->request->post('client_phone')));
-			$data[] = trim(strval($this->request->post('client_email')));
-			// store information about new client into database
-			$model_client = Model::factory('Clients')->registerRecord($data);
-			// get client_id of new client
-			$client_id = Model::factory('Clients')->getClientByEmail($client_email);
-		}
+	public function addEditHandler($pathToViewFile, $record_id = null) {
 
-		unset($data);
-		$data[] = 0;
-		$data[] = intval($this->request->post('baseequ_id'));
-		$data[] = 0;
-		$data[] = 1;
-		$data[] = DB::expr('CURDATE()');
-		$data[] = $client_id;
-		$result = Model::factory('Orders')->registerRecord($data);
-		if ($result) {
-			$order_id = Model::factory('Orders')->getLastOrder();
-			$this->request->redirect('orders/registered/'.$order_id);
+		
+	}
+
+	public function action_update() {
+		if (!Auth::instance()->logged_in("login")) {
+			$this->request->redirect("login");
+		}
+		else {
+			$this->data[] = intval($this->request->post('accrec_id'));
+			$this->prepareMainData();
+			$model = Model::factory($this->modelName)->updateRecord($this->data);
+
+			if ($model) $this->request->redirect('orders/registered');
 		}
 	}
 
 	public function action_registered() {
 		$order_id = $this->request->param('id');
-		$content = View::factory("orders/registered");
-		$content->order_id = $order_id;
+		$content = View::factory("user/orders/registered");
 		$this->template->content = $content;
 	}
-
+	
+		# code...
 }
+
+// Options Groups Manager Controller

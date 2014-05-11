@@ -18,9 +18,12 @@ class Controller_Admin_Ordersman extends Controller_Admin_Commonentity {
 		else {
 			$count = Model::factory('Orders')->countRecords();
 			$content = View::factory('admin/orders/index')->bind('page_links', $page_links);
+
+
+			
 			/* Paginator */
 			$pagination = Pagination::factory(array('total_items' => $count, 'items_per_page' => 10));
-			$model = Model::factory('Orders')->getCCOrdersRange($pagination->items_per_page, $pagination->offset);
+			$model = Model::factory('Orders')->getRecordsRange($pagination->items_per_page, $pagination->offset);
 			/* Paginator */
 			$page_links = $pagination->render();
 			$content->data = $model;

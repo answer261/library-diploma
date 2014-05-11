@@ -1,16 +1,16 @@
 <!-- Baseequ add form -->
 <script src="<?php echo URL::base();?>public/js/forms.js"></script>
-<span class="tab_title">Реєстрація нової категорії<hr></span>
+<span class="tab_title">Реєстрація нового видавника<hr></span>
 <div id="addform">
 	<form action="register" method="POST" name="addform" id="addform">
 
 		<div class="table">
 			<div class="table-row">
 				<div class="table-cell no-border label">
-					<label for="baseequ_name">Назва нової категорії</label>
+					<label for="baseequ_name">Назва видавника</label>
 				</div>
 				<div class="table-cell no-border input">
-					<input type="text" name="category_name" id="category_name">
+					<input type="text" name="publisher_name" id="publisher_name">
 				</div>
 			</div>
 		</div>

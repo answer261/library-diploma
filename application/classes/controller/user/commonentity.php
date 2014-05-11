@@ -1,6 +1,6 @@
 ﻿<?php defined('SYSPATH') or die('No direct script access.');
 
-abstract class Controller_Admin_Commonentity extends Controller_Template {
+abstract class Controller_User_Commonentity extends Controller_Template {
 
 	protected $modelName = "";
 	protected $indexViewFile = "";
@@ -8,22 +8,24 @@ abstract class Controller_Admin_Commonentity extends Controller_Template {
 	protected $editFormViewFile = "";
 	protected $data = array();
 	protected $redirectURL = "";
-	public $template = 'admin/main';
+	public $template = 'user/main';
 
 	public function before() {
 		parent::before();
+		if (!Auth::instance()->logged_in()) {
+			$this->request->redirect("login");
+		}
 		View::set_global('title', 'Електронна бібліотека');
 		View::set_global('description', 'Kohana 3.2 framework based site');
 		$user_first = Auth::instance()->get_user()->firstname;
 		$user_last = Auth::instance()->get_user()->lastname;
+
 		View::set_global('user_first', $user_first);
 		View::set_global('user_last', $user_last);
 		$this->template->content = "";
 		$this->template->styles = array('framework','main');
 		$this->template->scripts = "";
-		if (!Auth::instance()->logged_in("admin")) {
-			$this->request->redirect("login");
-		}
+
 	}
 
 	public function action_index() {

@@ -4,7 +4,7 @@
 	<span class="tab_title">Реєстрація інформації про новий інвентарний номер <hr></span>
 </div>
 <div id="addform">
-	<form onsubmit="return checkForm(this)" action="register" method="POST" name="addform" id="addform">
+	<form action="<?php echo URL::base();?>admin/invnumbers/register" method="POST" name="addform" id="addform">
 		<div class="table">
 				<div class="table-row">
 					<div class="table-cell no-border label"><label for="brand_name">Інвентарний номер</label></div>
@@ -12,7 +12,15 @@
 				</div>
 				<div class="table-row">
 					<div class="table-cell no-border label"><label for="brand_name">Назва</label></div>
-					<div class='table-cell no-border input'><input type='text' name='book_id' id='book_id'/></div>
+					<div class='table-cell no-border input'>
+						<select name="book_id" id="book_id">
+							<option value="0">Виберіть нижку</option>
+							<?php
+							foreach ($books as $book) {
+								echo "<option value=\"{$book->book_id}\">{$book->book_title}</option>";
+							}
+							?>
+						</select>
 				</div>
 				
 		</div>

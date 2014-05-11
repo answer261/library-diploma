@@ -20,6 +20,8 @@ class Controller_Admin_Users extends Controller_Admin_Commonentity {
 		$model = ORM::factory('user');
 		$model->values(array(
    			'username' => trim(strval($this->request->post('username'))),
+	   		'firstname' => trim(strval($this->request->post('firstname'))),
+	   		'lastname' => trim(strval($this->request->post('lastname'))),
    			'email' => trim(strval($this->request->post('email'))),
    			'password' => trim(strval($this->request->post('password'))),
    			'password_confirm' => trim(strval($this->request->post('password_confirm'))),
@@ -45,9 +47,9 @@ class Controller_Admin_Users extends Controller_Admin_Commonentity {
 			$model = ORM::factory('user', $id);
 			$model->values(array(
 	   			'username' => trim(strval($this->request->post('username'))),
+	   			'firstname' => trim(strval($this->request->post('firstname'))),
+	   			'lastname' => trim(strval($this->request->post('lastname'))),
 	   			'email' => trim(strval($this->request->post('email'))),
-	   			'password' => trim(strval($this->request->post('password'))),
-	   			'password_confirm' => trim(strval($this->request->post('password_confirm'))),
 			));
 			$model->save();
 			if ($model) $this->request->redirect($this->redirectURL);

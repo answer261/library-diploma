@@ -5,6 +5,6 @@
 class Model_Users extends Model_Common {
 	
 	protected $tableName = "users";
-	protected $fieldNames = array("id", "email", "username", "password", "logins", "last_login");
+	protected $fieldNames = array("id", "email", "username", "password","firstname", "lastname", "logins", "last_login");
 	
 }

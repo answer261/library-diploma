@@ -640,6 +640,10 @@ hr {
     padding: 2px 5px;
 }
 
+.row.main img {
+		display: none;
+	}
+
 @media only screen and (min-width: 960px){
 	.content_nav {
 		display: block;
@@ -851,5 +855,40 @@ hr {
 		line-height: 1.5;
 		padding-left: 1.5em;
 	}	
+
+	.column-33 {
+		background: silver;
+		border-radius: 5px;
+		margin: 5px;
+		padding: 20px;
+		border: 1px solid silver;
+	}
+
+	.column-33:hover {
+		border: 1px solid black;
+		box-shadow: 1px 1px 20px #000 inset;
+	}
+
+	.info-about h2, .info-about b {
+		font-weight: bold;
+	}
+
+	.info-about h2, .info-about p {
+		text-align: left;
+	}	
+
+	.row.main{
+		text-align: left;
+		font-size: 18px;
+		padding: 20px 50px;
+	}
+
+	.row.main img {
+		display: inline-block;
+	}
+
+	.imgWrapp {
+		text-align: center;
+	}
 }
 
